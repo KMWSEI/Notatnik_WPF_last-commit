@@ -1,0 +1,309 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AppName" xml:space="preserve">
+    <value>Notepad</value>
+  </data>
+  <data name="ChooseFileDialog" xml:space="preserve">
+    <value>Choose text file</value>
+  </data>
+  <data name="ClipBoard" xml:space="preserve">
+    <value>Clipboard</value>
+  </data>
+  <data name="Copy" xml:space="preserve">
+    <value>_Copy</value>
+  </data>
+  <data name="CurrentTime" xml:space="preserve">
+    <value>_Datatime</value>
+  </data>
+  <data name="Cut" xml:space="preserve">
+    <value>C_ut</value>
+  </data>
+  <data name="DialogBoxesFiltr" xml:space="preserve">
+    <value>Text files(*.txt)|*.txt|XML files (*.xml)|*.xml|Sourcecode files (*.cs)|*.cs|All files (*.*)|*.*</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>_Edit</value>
+  </data>
+  <data name="EditFile" xml:space="preserve">
+    <value>Edit File</value>
+  </data>
+  <data name="English" xml:space="preserve">
+    <value>Engl_ish</value>
+  </data>
+  <data name="Exit" xml:space="preserve">
+    <value>E_xit</value>
+  </data>
+  <data name="File" xml:space="preserve">
+    <value>File</value>
+  </data>
+  <data name="Find" xml:space="preserve">
+    <value>Fin_d</value>
+  </data>
+  <data name="Fonts" xml:space="preserve">
+    <value>_Fonts</value>
+  </data>
+  <data name="Interface" xml:space="preserve">
+    <value>Interface</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>_Language</value>
+  </data>
+  <data name="NewFile" xml:space="preserve">
+    <value>_New File</value>
+  </data>
+  <data name="Next" xml:space="preserve">
+    <value>Find next</value>
+  </data>
+  <data name="NoFile" xml:space="preserve">
+    <value>[File not found]</value>
+  </data>
+  <data name="NotFound" xml:space="preserve">
+    <value>Nothing found</value>
+  </data>
+  <data name="NotFoundMore" xml:space="preserve">
+    <value>Nothing found more</value>
+  </data>
+  <data name="OpenFile" xml:space="preserve">
+    <value>_Open</value>
+  </data>
+  <data name="Paste" xml:space="preserve">
+    <value>_Paste</value>
+  </data>
+  <data name="Polish" xml:space="preserve">
+    <value>Pol_ish</value>
+  </data>
+  <data name="Print" xml:space="preserve">
+    <value>P_rint</value>
+  </data>
+  <data name="Redo" xml:space="preserve">
+    <value>_Redo</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>R_emove</value>
+  </data>
+  <data name="RibbonChange" xml:space="preserve">
+    <value>Change to</value>
+  </data>
+  <data name="RibbonClipBoard" xml:space="preserve">
+    <value>Clipboard</value>
+  </data>
+  <data name="RibbonCopy" xml:space="preserve">
+    <value>Copy</value>
+  </data>
+  <data name="RibbonCurrentTime" xml:space="preserve">
+    <value>Datatime</value>
+  </data>
+  <data name="RibbonCut" xml:space="preserve">
+    <value>Cut</value>
+  </data>
+  <data name="RibbonEdit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="RibbonEditFile" xml:space="preserve">
+    <value>Edit File</value>
+  </data>
+  <data name="RibbonExit" xml:space="preserve">
+    <value>Exit</value>
+  </data>
+  <data name="RibbonFile" xml:space="preserve">
+    <value>File</value>
+  </data>
+  <data name="RibbonFind" xml:space="preserve">
+    <value>Find</value>
+  </data>
+  <data name="RibbonNewFile" xml:space="preserve">
+    <value>New File</value>
+  </data>
+  <data name="RibbonOpenFile" xml:space="preserve">
+    <value>Open File</value>
+  </data>
+  <data name="RibbonPaste" xml:space="preserve">
+    <value>Paste</value>
+  </data>
+  <data name="RibbonPrint" xml:space="preserve">
+    <value>Print</value>
+  </data>
+  <data name="RibbonRedo" xml:space="preserve">
+    <value>Redo</value>
+  </data>
+  <data name="RibbonRemove" xml:space="preserve">
+    <value>Remove</value>
+  </data>
+  <data name="RibbonSaveAs" xml:space="preserve">
+    <value>Save As...</value>
+  </data>
+  <data name="RibbonSaveFile" xml:space="preserve">
+    <value>Save File</value>
+  </data>
+  <data name="RibbonSelectAll" xml:space="preserve">
+    <value>Select all</value>
+  </data>
+  <data name="RibbonStatusBar" xml:space="preserve">
+    <value>StatusBar</value>
+  </data>
+  <data name="RibbonToolBar" xml:space="preserve">
+    <value>ToolBar</value>
+  </data>
+  <data name="RibbonUndo" xml:space="preserve">
+    <value>Undo</value>
+  </data>
+  <data name="RibbonView" xml:space="preserve">
+    <value>View</value>
+  </data>
+  <data name="RibbonWrapRows" xml:space="preserve">
+    <value>Wrapping Rows</value>
+  </data>
+  <data name="SaveAs" xml:space="preserve">
+    <value>_Save As...</value>
+  </data>
+  <data name="SaveFile" xml:space="preserve">
+    <value>S_ave</value>
+  </data>
+  <data name="SaveFileDialog" xml:space="preserve">
+    <value>Save text file</value>
+  </data>
+  <data name="SelectAll" xml:space="preserve">
+    <value>Sel_ect all</value>
+  </data>
+  <data name="StatusBar" xml:space="preserve">
+    <value>St_atusBar</value>
+  </data>
+  <data name="Text" xml:space="preserve">
+    <value>Text</value>
+  </data>
+  <data name="TextNotSaved" xml:space="preserve">
+    <value>The text has been changed, file has been not saved.</value>
+  </data>
+  <data name="TextSaved" xml:space="preserve">
+    <value>File has been saved!</value>
+  </data>
+  <data name="ToolBar" xml:space="preserve">
+    <value>_ToolBar</value>
+  </data>
+  <data name="Undo" xml:space="preserve">
+    <value>_Undo</value>
+  </data>
+  <data name="View" xml:space="preserve">
+    <value>_View</value>
+  </data>
+  <data name="WrapRows" xml:space="preserve">
+    <value>_Wrap Rows</value>
+  </data>
+</root>

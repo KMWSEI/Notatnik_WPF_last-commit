@@ -1,0 +1,4 @@
+Media queries size:
+mobile: max-width:800px
+tablet: 1280
+pc: nic lub max width

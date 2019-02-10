@@ -1,0 +1,204 @@
+﻿<Window x:Class="NotatnikWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NotatnikWPF"
+        xmlns:p="clr-namespace:NotatnikWPF.Properties"
+        mc:Ignorable="d"
+        Closing="Window_Closing"
+        PreviewKeyDown="Window_PreviewKeyDown"
+        WindowState="Maximized"
+        Title = "{x:Static p:Resources.AppName}" Height="1000" Width="1000">
+    <Window.Resources>
+        <Image x:Key="ClockIcon" x:Shared="False" Source="C:\Users\TRATATATA\source\repos\NotatnikWPF\a\clock.png"
+               Width="16" Height="16" />
+        <Image x:Key="CopyIcon" x:Shared="False" Source="C:\Users\TRATATATA\source\repos\NotatnikWPF\a\copy.png"
+               Width="16" Height="16" />
+        <Image x:Key="CutIcon" x:Shared="False" Source="C:\Users\TRATATATA\source\repos\NotatnikWPF\a\cut.png"
+               Width="16" Height="16" />
+        <Image x:Key="NewIcon" x:Shared="False" Source="C:\Users\TRATATATA\source\repos\NotatnikWPF\a\new.png"
+               Width="16" Height="16" />
+        <Image x:Key="PasteIcon" x:Shared="False" Source="C:\Users\TRATATATA\source\repos\NotatnikWPF\a\paste.png"
+               Width="16" Height="16" />
+        <Image x:Key="RedoIcon" x:Shared="False" Source="C:\Users\TRATATATA\source\repos\NotatnikWPF\a\redo.png"
+               Width="16" Height="16" />
+        <Image x:Key="RemoveIcon" x:Shared="False" Source="C:\Users\TRATATATA\source\repos\NotatnikWPF\a\remove.png"
+               Width="16" Height="16" />
+        <Image x:Key="SaveIcon" x:Shared="False" Source="C:\Users\TRATATATA\source\repos\NotatnikWPF\a\save.png"
+               Width="16" Height="16" />
+        <Image x:Key="UndoIcon" x:Shared="False" Source="C:\Users\TRATATATA\source\repos\NotatnikWPF\a\undo.png"
+               Width="16" Height="16" />
+        <Image x:Key="OpenIcon" x:Shared="False" Source="C:\Users\TRATATATA\source\repos\NotatnikWPF\a\open.png"
+               Width="16" Height="16" />
+    </Window.Resources>
+    <DockPanel>
+        <Menu IsMainMenu="True" DockPanel.Dock="Top" >
+            <MenuItem Header="{x:Static p:Resources.File}">
+                <MenuItem Header="{x:Static p:Resources.NewFile}" InputGestureText="Ctrl+N" Click="MenuItem_NewFile_Click" Icon="{StaticResource NewIcon}"/>
+                <MenuItem Header="{x:Static p:Resources.OpenFile}" InputGestureText="Ctrl+O" Click="MenuItem_Open_Click" Icon="{StaticResource OpenIcon}"/>
+                <MenuItem Header="{x:Static p:Resources.SaveFile}" InputGestureText="Ctrl+S" Click="MenuItem_Save_Click" Icon="{StaticResource SaveIcon}"/>
+                <MenuItem Header="{x:Static p:Resources.SaveAs}" Click="MenuItem_SaveAs_Click"/>
+                <Separator />
+                <MenuItem Header="{x:Static p:Resources.Print}" InputGestureText="Ctrl+P" Click="MenuItem_Print_Click"/>
+                <Separator />
+                <MenuItem Header="{x:Static p:Resources.Exit}" InputGestureText="Alt+F4" Click="MenuItem_Close_Click"/>
+            </MenuItem>
+            <MenuItem Header="{x:Static p:Resources.Edit}" SubmenuOpened="MenuItem_SubmenuOpened">
+                <MenuItem Header="{x:Static p:Resources.Undo}" InputGestureText="Ctrl+Z" x:Name="UnDo"
+                          Click="MenuItem_Undo_Click" Icon="{StaticResource UndoIcon}"/>
+                <MenuItem Header="{x:Static p:Resources.Redo}" InputGestureText="Ctrl+Y" x:Name="CanDo"
+                          Click="MenuItem_Redo_Click" Icon="{StaticResource RedoIcon}"/>
+                <Separator />
+                <MenuItem Header="{x:Static p:Resources.Cut}" InputGestureText="Ctrl+X" x:Name="Cut"
+                          Click="MenuItem_Cut_Click" Icon="{StaticResource CutIcon}"/>
+                <MenuItem Header="{x:Static p:Resources.Copy}" InputGestureText="Ctrl+C" x:Name="Copy"
+                          Click="MenuItem_Copy_Click" Icon="{StaticResource CopyIcon}"/>
+                <MenuItem Header="{x:Static p:Resources.Paste}" InputGestureText="Ctrl+V" x:Name="Paste"
+                          Click="MenuItem_Paste_Click" Icon="{StaticResource PasteIcon}"/>
+                <MenuItem Header="{x:Static p:Resources.Remove}" InputGestureText="Del" Click="MenuItem_DeleteText_Click" Icon="{StaticResource RemoveIcon}"/>
+                <Separator />
+                <MenuItem Header="{x:Static p:Resources.Find}" InputGestureText="Ctrl+A" Click="MenuItem_OpenFindMenu_Click"/>
+                <Separator />
+                <MenuItem Header="{x:Static p:Resources.SelectAll}" InputGestureText="Ctrl+A" Click="MenuItem_SelectAll_Click"/>
+                <MenuItem Header="{x:Static p:Resources.Fonts}" Click="MenuItem_Font_Click"/>
+                <Separator />
+                <MenuItem Header="{x:Static p:Resources.CurrentTime}" InputGestureText="F5" Click="MenuItem_DataTime_Click" Icon="{StaticResource ClockIcon}"/>
+            </MenuItem>
+            <MenuItem Header="{x:Static p:Resources.View}" >
+                <MenuItem Header="{x:Static p:Resources.WrapRows}"
+                          IsCheckable="True" IsChecked="True" Click="MenuItem_WrapRows_Click" />
+                <Separator />
+                <MenuItem Header="{x:Static p:Resources.ToolBar}" 
+                          IsCheckable="True" IsChecked="True" Click="MenuItem_ToolBar_Click"/>
+                <MenuItem Header="{x:Static p:Resources.StatusBar}"
+                          IsCheckable="True" IsChecked="True" Click="MenuItem_StatusBar_Click"/>
+            </MenuItem>
+            <MenuItem x:Name="LanguageMenu" Header="{x:Static p:Resources.Language}" >
+                <MenuItem Header="{x:Static p:Resources.Polish}"
+                          Click="MenuItem_SwitchLangToPL_Click" />
+                <MenuItem Header="{x:Static p:Resources.English}" 
+                          Click="MenuItem_SwitchLangToEN_Click"/>
+            </MenuItem>
+        </Menu>
+        <ToolBarTray x:Name="toolBar" DockPanel.Dock="Top" >
+            <ToolBar>
+                <Button ToolTip="{x:Static p:Resources.RibbonCurrentTime}" Content="{StaticResource ClockIcon}" ToolBar.OverflowMode="AsNeeded" Click="MenuItem_DataTime_Click" />
+                <Button ToolTip="{x:Static p:Resources.RibbonCopy}" Content="{StaticResource CopyIcon}" ToolBar.OverflowMode="AsNeeded" Click="MenuItem_Copy_Click" />
+                <Button ToolTip="{x:Static p:Resources.RibbonCut}" Content="{StaticResource CutIcon}" ToolBar.OverflowMode="AsNeeded" Click="MenuItem_Cut_Click" />
+                <Button ToolTip="{x:Static p:Resources.RibbonPaste}" Content="{StaticResource PasteIcon}" ToolBar.OverflowMode="AsNeeded" Click="MenuItem_Paste_Click" />
+                <Button ToolTip="{x:Static p:Resources.RibbonNewFile}" Content="{StaticResource NewIcon}" ToolBar.OverflowMode="AsNeeded" Click="MenuItem_NewFile_Click" />
+                <Button ToolTip="{x:Static p:Resources.RibbonSaveFile}" Content="{StaticResource SaveIcon}" ToolBar.OverflowMode="AsNeeded" Click="MenuItem_Save_Click" />
+                <Button ToolTip="{x:Static p:Resources.RibbonRedo}" Content="{StaticResource RedoIcon}" ToolBar.OverflowMode="AsNeeded" Click="MenuItem_Redo_Click" />
+                <Button ToolTip="{x:Static p:Resources.RibbonUndo}" Content="{StaticResource UndoIcon}" ToolBar.OverflowMode="AsNeeded" Click="MenuItem_Undo_Click" />
+                <Button ToolTip="{x:Static p:Resources.RibbonRemove}" Content="{StaticResource RemoveIcon}" ToolBar.OverflowMode="AsNeeded" Click="MenuItem_DeleteText_Click" />
+            </ToolBar>
+        </ToolBarTray>
+        <Ribbon DockPanel.Dock="Top" Height="auto" Width="auto">
+            <Ribbon.ApplicationMenu>
+                <RibbonApplicationMenu >
+                    <RibbonApplicationMenuItem Header="{x:Static p:Resources.RibbonNewFile}" ImageSource="C:\Users\TRATATATA\source\repos\NotatnikWPF\a\new.png" Click="MenuItem_NewFile_Click" />
+                    <RibbonApplicationMenuItem Header="{x:Static p:Resources.RibbonOpenFile}" ImageSource="C:\Users\TRATATATA\source\repos\NotatnikWPF\a\open.png" Click="MenuItem_Open_Click" />
+                    <RibbonApplicationMenuItem Header="{x:Static p:Resources.RibbonSaveFile}" ImageSource="C:\Users\TRATATATA\source\repos\NotatnikWPF\a\save.png" Click="MenuItem_Save_Click" />
+                    <RibbonApplicationMenuItem Header="{x:Static p:Resources.RibbonSaveAs}"  Click="MenuItem_SaveAs_Click" />
+                    <RibbonSeparator />
+                    <RibbonApplicationMenuItem Header="{x:Static p:Resources.RibbonPrint}"  Click="MenuItem_Print_Click" />
+                    <RibbonSeparator />
+                    <RibbonApplicationMenuItem Header="{x:Static p:Resources.RibbonExit}"  Click="MenuItem_Close_Click" />
+                </RibbonApplicationMenu>
+            </Ribbon.ApplicationMenu>
+            <RibbonTab Header="{x:Static p:Resources.RibbonFile}">
+                <RibbonGroup Header="{x:Static p:Resources.RibbonEditFile}">
+                    <RibbonMenuButton Label="{x:Static p:Resources.RibbonSaveFile}" LargeImageSource="C:\Users\TRATATATA\source\repos\NotatnikWPF\a\save.png" >
+                        <RibbonButton Label="{x:Static p:Resources.RibbonSaveFile}" ToolTip="{x:Static p:Resources.RibbonSaveFile}" SmallImageSource="C:\Users\TRATATATA\source\repos\NotatnikWPF\a\save.png" Click="MenuItem_Save_Click" />
+                        <RibbonButton Label="{x:Static p:Resources.RibbonSaveAs}" ToolTip="{x:Static p:Resources.RibbonSaveAs}" SmallImageSource="C:\Users\TRATATATA\source\repos\NotatnikWPF\a\save.png" Click="MenuItem_SaveAs_Click" />
+                    </RibbonMenuButton>
+                    <UniformGrid Columns="1" Rows="2" >
+                        <RibbonButton ToolTip="{x:Static p:Resources.RibbonNewFile}" SmallImageSource="C:\Users\TRATATATA\source\repos\NotatnikWPF\a\new.png" Click="MenuItem_NewFile_Click" />
+                        <RibbonButton ToolTip="{x:Static p:Resources.RibbonOpenFile}" SmallImageSource="C:\Users\TRATATATA\source\repos\NotatnikWPF\a\open.png" Click="MenuItem_Open_Click" />
+                    </UniformGrid>
+                </RibbonGroup>
+            </RibbonTab>
+            <RibbonTab Header="{x:Static p:Resources.RibbonEdit}">
+                <RibbonGroup Header="{x:Static p:Resources.RibbonClipBoard}">
+                    <UniformGrid Columns="2" Rows="2" >
+                        <RibbonButton ToolTip="{x:Static p:Resources.RibbonCopy}" SmallImageSource="C:\Users\TRATATATA\source\repos\NotatnikWPF\a\copy.png" Click="MenuItem_Copy_Click" />
+                        <RibbonButton ToolTip="{x:Static p:Resources.RibbonPaste}" SmallImageSource="C:\Users\TRATATATA\source\repos\NotatnikWPF\a\paste.png" Click="MenuItem_Paste_Click" />
+                        <RibbonButton ToolTip="{x:Static p:Resources.RibbonCut}" SmallImageSource="C:\Users\TRATATATA\source\repos\NotatnikWPF\a\cut.png" Click="MenuItem_Cut_Click" />
+                        <RibbonButton ToolTip="{x:Static p:Resources.RibbonRemove}" SmallImageSource="C:\Users\TRATATATA\source\repos\NotatnikWPF\a\remove.png" Click="MenuItem_DeleteText_Click" />
+                    </UniformGrid>
+                </RibbonGroup>
+                <RibbonGroup Header="{x:Static p:Resources.Text}">
+                    <UniformGrid Columns="1" Rows="2" >
+                        <RibbonButton ToolTip="{x:Static p:Resources.RibbonSelectAll}" Label="{x:Static p:Resources.RibbonSelectAll}" Click="MenuItem_SelectAll_Click" />
+                        <RibbonButton ToolTip="{x:Static p:Resources.RibbonFind}" Label="{x:Static p:Resources.RibbonFind}" Click="MenuItem_OpenFindMenu_Click" />
+                    </UniformGrid>
+                </RibbonGroup>
+            </RibbonTab>
+            <RibbonTab Header="{x:Static p:Resources.RibbonView}">
+                <RibbonGroup Header="{x:Static p:Resources.Interface}">
+                    <UniformGrid Columns="1" Rows="3" >
+                        <RibbonCheckBox Label="{x:Static p:Resources.RibbonWrapRows}" HorizontalAlignment="Left"
+                                        IsChecked="True" Click="MenuItem_WrapRows_Click" />
+                        <RibbonCheckBox Label="{x:Static p:Resources.RibbonToolBar}" HorizontalAlignment="Left" 
+                                        IsChecked="True" Click="MenuItem_ToolBar_Click"/>
+                        <RibbonCheckBox Label="{x:Static p:Resources.RibbonStatusBar}" HorizontalAlignment="Left"
+                                        IsChecked="True" Click="MenuItem_StatusBar_Click"/>
+                    </UniformGrid>
+                </RibbonGroup>
+            </RibbonTab>
+        </Ribbon>
+        <Popup x:Name="FindMenu" IsOpen="False" Placement="Right" PlacementTarget="{Binding ElementName=LanguageMenu}">
+            <Border Background="LightGray" BorderBrush="Black" BorderThickness="1">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="100"/>
+                    </Grid.ColumnDefinitions>
+                    
+                    <TextBlock Grid.Row="0" Grid.Column="0" 
+                               Text="{x:Static p:Resources.RibbonFind}" Margin="5 10 0 10"/>
+                    <TextBox Grid.Row="0" Grid.Column="1" Width="100" Height="20" 
+                             x:Name="ToFind" TextChanged="ToFind_TextChanged"/>
+                    <Button Grid.Row="0" Grid.Column="2" Content="{x:Static p:Resources.RibbonFind}" 
+                            Width="60" x:Name="ToFindButton" IsEnabled="False" Height="25" Click="Button_Find_Click"/>
+
+                    <Button Grid.Row="1" Grid.Column="3" x:Name="FindNextButton" Content="{x:Static p:Resources.Next}" Click="Button_FindNext_Click"
+                            Width="60" IsEnabled="False" Height="25"/>
+
+                    <TextBlock Grid.Row="2" Grid.Column="0"
+                               Text="{x:Static p:Resources.RibbonChange}" Margin="5 10 0 10"/>
+                    <TextBox Grid.Row="2" Grid.Column="1" Width="100" Height="20" 
+                             x:Name="ToChange" TextChanged="ToChange_TextChanged"/>
+                    <Button Grid.Row="2" Grid.Column="2" Content="{x:Static p:Resources.RibbonChange}" Width="60"  
+                            x:Name="ToChangeButton" IsEnabled="False" Height="25" Click="ToChangeButton_Click"/>
+
+                    <TextBlock Grid.Row="3" Grid.ColumnSpan="2" x:Name="FindingResult" Margin="5 10 0 10"/>
+                    <Button Grid.Row="3" Grid.Column="2" Content="Zamknij" 
+                            Width="60" Height="25" Margin="0 0 0 5" Click="Button_CloseFindMenu_Click"/>
+                </Grid>
+            </Border>
+        </Popup>
+        <StatusBar x:Name="statusBar" DockPanel.Dock="Bottom" Background="Green">
+            <StatusBarItem>
+                <TextBlock x:Name="statusBarText" Text="{x:Static p:Resources.NoFile}" />
+            </StatusBarItem>
+            <StatusBarItem HorizontalAlignment="Right">
+                <TextBlock x:Name="statusBarTextChanged" Text="" />
+            </StatusBarItem>
+        </StatusBar>
+        <TextBox x:Name="textBox" 
+                 TextChanged="TextBox_TextChanged"
+                 SelectionChanged="TextBox_SelectionChanged"
+                 AcceptsReturn="True" TextWrapping="Wrap"
+                 ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                 ScrollViewer.VerticalScrollBarVisibility="Auto"/>
+    </DockPanel>
+</Window>

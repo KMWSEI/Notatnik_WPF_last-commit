@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2046
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotatnikWPF", "NotatnikWPF\NotatnikWPF.csproj", "{5CCEC7EC-F8CB-43E8-9DBB-D4EA5A3C709A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Img", "Img", "{D137449F-5A1C-414C-A1B7-597E83F15565}"
+	ProjectSection(SolutionItems) = preProject
+		a\clock.png = a\clock.png
+		a\copy.png = a\copy.png
+		a\cut.png = a\cut.png
+		a\new.png = a\new.png
+		a\open.png = a\open.png
+		a\paste.png = a\paste.png
+		a\redo.png = a\redo.png
+		a\remove.png = a\remove.png
+		a\save.png = a\save.png
+		a\undo.png = a\undo.png
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Notepad_UnitTests", "Notepad_UnitTests\Notepad_UnitTests.csproj", "{2EAEE540-917B-4F3D-B04D-951658964EE4}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Notatnik WPF", "Notatnik WPF\Notatnik WPF.vdproj", "{B168938A-59FC-435E-AEE8-DC56A21FF2DA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5CCEC7EC-F8CB-43E8-9DBB-D4EA5A3C709A}.Debug|Any CPU.ActiveCfg = Release|Any CPU
+		{5CCEC7EC-F8CB-43E8-9DBB-D4EA5A3C709A}.Debug|Any CPU.Build.0 = Release|Any CPU
+		{5CCEC7EC-F8CB-43E8-9DBB-D4EA5A3C709A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5CCEC7EC-F8CB-43E8-9DBB-D4EA5A3C709A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2EAEE540-917B-4F3D-B04D-951658964EE4}.Debug|Any CPU.ActiveCfg = Release|Any CPU
+		{2EAEE540-917B-4F3D-B04D-951658964EE4}.Debug|Any CPU.Build.0 = Release|Any CPU
+		{2EAEE540-917B-4F3D-B04D-951658964EE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2EAEE540-917B-4F3D-B04D-951658964EE4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B168938A-59FC-435E-AEE8-DC56A21FF2DA}.Debug|Any CPU.ActiveCfg = Debug
+		{B168938A-59FC-435E-AEE8-DC56A21FF2DA}.Release|Any CPU.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A937053D-E7F1-4BDC-8295-58639194E199}
+	EndGlobalSection
+EndGlobal
